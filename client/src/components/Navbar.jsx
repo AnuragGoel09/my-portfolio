@@ -117,7 +117,7 @@ const Menu=styled.div`
 
 export default function Navbar() {
 
-    const [active,setActive]=useState("about")
+    const [active,setActive]=useState("work")
 
   return (
     <Nav>
@@ -130,9 +130,9 @@ export default function Navbar() {
         </Left>
         <Container>
             <Item>
-                <Light value="experience" active={active}></Light>
-                <Name value="experience" active={active} onClick={()=>{
-                    setActive("experience");
+                <Light value="work" active={active}></Light>
+                <Name value="work" active={active} onClick={()=>{
+                    setActive("work");
                 }}>Work</Name>
             </Item>
             <Item>
