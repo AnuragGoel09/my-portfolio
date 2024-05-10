@@ -104,7 +104,9 @@ const Right=styled.div`
     align-items: center;
     gap: 30px;
 `;
-const Menu=styled.div`
+const Menu=styled.a`
+    text-decoration: none;
+    color: whitesmoke;
     cursor: pointer;
     padding:8px 18px;
     &:hover{
@@ -141,20 +143,12 @@ export default function Navbar() {
                     setActive("about");
                 }}>About</Name>
             </Item>
-            {/* <Item>
-                <Light value="project" active={active}></Light>
-                <Name value="project" active={active} onClick={()=>{
-                    setActive("project");
-                }}>Projects</Name>
-            </Item> */}
         </Container>
         <Right>
-            <Menu>
-                {/* LinkedIn <img style={{width:'20px',color:'white'}} src="./right-up.png" /> */}
+            <Menu href='https://www.linkedin.com/in/anurag-goel-3013372a4/' target='_blank'>
                 LinkedIn        
             </Menu>
-            <Menu>
-                {/* Resume <img src="./right-up.png" /> */}
+            <Menu href='https://drive.google.com/file/d/1vcMMw3hQxQdSBO9UQjC85v55QRIu-uL3/view?usp=sharing' target='_blank'>
                 Resume
             </Menu>
         </Right>

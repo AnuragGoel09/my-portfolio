@@ -23,14 +23,19 @@ export default function Work() {
         <Intro/>
         {/* <Internship1/> */}
         <Project data={{
+          title:"Version Control System (VCS)",
+          type:"A lightweight version control system written in Python, inspired by Git, which provides a basic commands for managing your project’s version history.",
+          img:"./version-control-system.jpeg"
+          }}/>
+        <Project data={{
           title:"What To Wear - Cloth Recommender Based on Weather",
           type:"A Weather API based application for real time weather information and cloth recommender based on weather , classified based on K-nearest-neighbor algorithm.",
-          img:"./project1.png"
+          img:"./what-to-wear.png"
           }}/>
         <Project data={{
           title:"MyNotebook - Notes and Checklist taking web-app",
           type:"A MERN stack application to take notes and write a checklist that helps to manage work.",
-          img:"./project1.png"
+          img:"./my-notebook.png"
           }}/>
           
     </Container>

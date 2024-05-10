@@ -104,40 +104,46 @@ const Type=styled.div`
 const ProjectImg=styled.img`
     position: absolute;
     bottom: 0;
-    width: 75%;
-    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border: solid 1px rgba(255,255,255,0.1) ;
+    border-bottom: none;
+    border-radius: 13px 13px 0px 0px;
+    z-index: 1;
+    `;
+
+const ImgContainer=styled.div`
+    position: absolute;
+    bottom: 0%;
+    width: 75%;
+    padding: 22% 0%;
+    background-color: #202020;
+    border-radius: 13px 13px 0px 0px;
+    border: solid 0.5px rgba(255,255,255,0.3) ;
     border-bottom: none;
 `;
 
-// const Text1=styled.div`
-//   font-size: 70px;
-//   color: whitesmoke;
-//   font-family: Arial, Helvetica, sans-serif;
-//   text-shadow: 0 0 2px rgba(255,255,255,0.1), /* Adjust the color and spread radius as needed */
-//                  0 0 4px rgba(255,255,255,0.5);
-// `;
-
-// const Text2=styled.div`
-//   width: 100%;
-//   text-align: center;
-//   padding: 0px 60px;
-//   font-family: Arial, Helvetica, sans-serif;
-//   box-sizing: border-box;
-//   font-size: 40px;
-//   color: orange;
-//   margin-top: 20px;
-// `;
-
-const AnimateArrow=keyframes`
-  0% { transform: translateY(0); }
-  100% { transform: translateY(30px); }
+const Bar=styled.div`
+  position: absolute;
+  top: 0;
+  background-color: #202020;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 15px;
+  box-sizing: border-box;
+  height: 23px;
+  gap: 6px;
+  z-index: 2;
+  border-radius: 13px 13px 0px 0px;
 `;
-// const Arrow=styled.div`
-//   position: absolute;
-//   bottom: 10%;
-//   animation: ${AnimateArrow} 1.5s ease-in-out infinite;
-// `;
+
+const Circle=styled.div`
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  `;
 
 export default function Project(props) {
     const data=props.data;
@@ -150,7 +156,14 @@ export default function Project(props) {
             <Category>Project</Category>
             <Title>{data.title}</Title>
             <Type>{data.type}</Type>
-            <ProjectImg src={data.img} />
+            <ImgContainer>
+              <Bar>
+                <Circle style={{backgroundColor:'red'}}/>
+                <Circle style={{backgroundColor:'orange'}}/>
+                <Circle style={{backgroundColor:'green'}}/>
+              </Bar>
+              <ProjectImg src={data.img} />
+            </ImgContainer>
             </Content>
       </InnerContainer>
     </Container>

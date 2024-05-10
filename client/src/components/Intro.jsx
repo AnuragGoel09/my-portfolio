@@ -93,8 +93,8 @@ export default function Intro() {
       <InnerContainer>
         <Line2/>
           <Content>
-            <Text1>Unlocking the future, one line of code at a time.</Text1>
-            <Text2>- Hii, I m Anurag -</Text2>
+            <Text1>I’m not a great programmer; I’m just a good programmer with great habits.</Text1>
+            <Text2>- Hii!, I'm Anurag -</Text2>
             <Arrow><ArrowDownwardIcon fontSize='large'/></Arrow>
           </Content>
       </InnerContainer>
