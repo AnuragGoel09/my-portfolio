@@ -1,10 +1,13 @@
 import React from 'react'
 import styled ,{keyframes} from 'styled-components'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { mobile, tablet } from '../responsive';
+import { height, width } from '@mui/system';
 const Container=styled.div`
     color: white;
     position: relative;
     width: 75%;
+    ${mobile({width:'90%'})}
     background-color: rgba(0,0,0,0.3);
     border-radius: 2rem;
     border: solid 0.5px rgba(255,255,255,0.1) ;
@@ -15,6 +18,8 @@ const InnerContainer=styled.div`
     color: white;
     position: relative;
     padding: 30% 0%;
+    ${tablet({padding:'40vh 0%'})}
+    ${mobile({padding:'26vh 0%'})}
     margin: 1%;
     background-color: #202020;
     border-radius: 1.5rem;
@@ -61,6 +66,8 @@ const Content=styled.div`
   top: 0;
   left: 0px;
   gap: 8px;
+  
+  ${mobile({gap:'5px'})}
 `;
 
 const Light=styled.div`
@@ -80,6 +87,7 @@ const Category=styled.div`
     top: 10px;
     right: 15px;
     font-size: 20px;
+    ${mobile({fontSize:'3vw'})}
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(255,255,255,0.4);
     letter-spacing: 1.5px;
@@ -90,6 +98,7 @@ const Title=styled.div`
     width: 100%;
     text-align: left;
     font-size: 24px;
+    ${mobile({fontSize:'5vw'})}
     color: rgba(255,255,255,0.8);
     font-family: Arial, Helvetica, sans-serif;
 `;
@@ -97,6 +106,7 @@ const Type=styled.div`
     width: 100%;
     text-align: left;
     font-size: 20px;
+    ${mobile({fontSize:'3.5vw'})}
     color: rgba(255,255,255,0.4);
     font-family: monospace;
 `;
@@ -136,6 +146,7 @@ const Bar=styled.div`
   box-sizing: border-box;
   height: 23px;
   gap: 6px;
+  ${mobile({height:'10%',gap:'3px'})}
   z-index: 2;
   border-radius: 13px 13px 0px 0px;
 `;
@@ -143,11 +154,13 @@ const Bar=styled.div`
 const Circle=styled.div`
   width: 8px;
   height: 8px;
+    ${mobile({width:'4px',height:'4px'})}
   border-radius: 50%;
   `;
 
 const Technology=styled.div`
   height: 35px;
+  ${mobile({height:'20px'})}
   display: flex;
   justify-content: end;
   gap: 20px;

@@ -1,6 +1,9 @@
 import React from 'react'
 import styled ,{keyframes} from 'styled-components'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { mobile } from '../responsive';
+import { positions } from '@mui/system';
+
 const Container=styled.div`
     color: white;
     position: relative;
@@ -10,6 +13,7 @@ const Container=styled.div`
     border: solid 0.5px rgba(255,255,255,0.1) ;
     box-shadow: rgba(0,0,0,0.7) 0px 0px 20px 10px;
     border-bottom: none;
+    ${mobile({display:'none'})}
     `;
 
 const InnerContainer=styled.div`
@@ -58,7 +62,7 @@ const Content=styled.div`
 `;
 
 const Text1=styled.div`
-  font-size: 70px;
+  font-size: 2vw;
   color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
   text-shadow: 0 0 2px rgba(255,255,255,0.1), /* Adjust the color and spread radius as needed */
@@ -71,7 +75,7 @@ const Text2=styled.div`
   padding: 0px 60px;
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
-  font-size: 40px;
+  font-size: 3vw;
   color: orange;
   margin-top: 20px;
 `;
@@ -82,22 +86,63 @@ const AnimateArrow=keyframes`
 `;
 const Arrow=styled.div`
   position: absolute;
+  ${mobile({position:'relative'})}
   bottom: 10%;
   animation: ${AnimateArrow} 1.5s ease-in-out infinite;
 `;
 
+const MobileContainer=styled.div`
+  width: 80%;
+  display: none;
+  ${mobile({display:'flex'})}
+  flex-direction: column;
+  align-items: left;
+  gap: 20px;
+  /* position: relative; */
+`;
+
+const Heading=styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.2px;
+`;
+
+const Circle=styled.div`
+  width: 12px;
+  height: 12px;
+  ${mobile({width:'7px',height:'7px'})}
+  box-shadow: white 0px 0px 10px 2px;
+  background-color: white;
+  border-radius: 50%;
+`;
+
 export default function Intro() {
   return (
-    <Container>
-      <Line/>
-      <InnerContainer>
-        <Line2/>
-          <Content>
-            <Text1>I’m not a great programmer; I’m just a good programmer with great habits.</Text1>
-            <Text2>- Hii!, I'm Anurag -</Text2>
-            <Arrow><ArrowDownwardIcon fontSize='large'/></Arrow>
-          </Content>
-      </InnerContainer>
-    </Container>
+    <>
+      <Container>
+        <Line/>
+        <InnerContainer>
+          <Line2/>
+            <Content>
+              <Text1>I’m not a great programmer, I’m just a good programmer with great habits.</Text1>
+              <Text2>- Hii!, I'm Anurag -</Text2>
+              <Arrow><ArrowDownwardIcon fontSize='large'/></Arrow>
+            </Content>
+        </InnerContainer>
+      </Container>
+      <MobileContainer>
+        <Heading>
+          <Circle/><span>Anurag Goel<br></br><span style={{color:'rgba(255,255,255,0.5)'}}>CSE Undergrad '25 @IIT Dharwad</span></span>
+        </Heading>
+        <Text1 style={{fontSize:'4vw'}}>I’m not a great programmer, I’m just a good programmer with great habits.</Text1>
+        <Text2 style={{fontSize:'4vw',marginTop:'-10px'}}>- Hii!, I'm Anurag -</Text2>
+        <ArrowDownwardIcon fontSize='small' style={{margin:'auto'}}/>
+      </MobileContainer>
+    </>
   )
 }

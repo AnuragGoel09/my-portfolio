@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
-
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import { mobile } from '../responsive';
+import CloseIcon from '@mui/icons-material/Close';
 const Nav=styled.div`
     width: 100%;
     position: relative;
@@ -25,6 +27,7 @@ const Left=styled.div`
     align-items: center;
     gap: 10px;
     color: whitesmoke;
+    ${mobile({display:'none'})}
 `;
 
 const LeftLight=styled.div`
@@ -97,13 +100,25 @@ const Name=styled.div`
     font-family:Arial, Helvetica, sans-serif;
     font-size: 14px;
 `;
-const Right=styled.div`
+const Right1=styled.div`
     position: absolute;
     right: 20px;
     color: white;
     display: flex;
     align-items: center;
+    gap: 10px;
+    ${mobile({display:'none'})}
+`;
+const Right2=styled.div`
+    position: absolute;
+    right: 20px;
+    color: white;
+    display: none;
+    ${mobile({display:'flex'})}
+    flex-direction: column;
     gap: 30px;
+    align-items: end;
+    
 `;
 const Menu=styled.a`
     text-decoration: none;
@@ -118,11 +133,32 @@ const Menu=styled.a`
     font-size: 15px;
 `;
 
+const Button=styled.div`
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+`;
+
+const Options=styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px;
+    border-radius: 20px;
+`;
+
 export default function Navbar() {
 
     const location=useLocation();
     // const [active,setActive]=useState("/");
     const navigate=useNavigate();
+    const [click,setClick]=useState(false)
 
   return (
     <Nav>
@@ -147,14 +183,25 @@ export default function Navbar() {
                 }}>About</Name>
             </Item>
         </Container>
-        <Right>
+        <Right1>
             <Menu href='https://www.linkedin.com/in/anurag-goel-3013372a4/' target='_blank'>
                 LinkedIn        
             </Menu>
             <Menu href='https://drive.google.com/file/d/1vcMMw3hQxQdSBO9UQjC85v55QRIu-uL3/view?usp=sharing' target='_blank'>
                 Resume
             </Menu>
-        </Right>
+        </Right1>
+        <Right2>
+            <Button onClick={()=>{setClick(!click)}}>{click?<CloseIcon/>:<AlternateEmailIcon/>}</Button>
+            {click && <Options>
+                <Menu href='https://www.linkedin.com/in/anurag-goel-3013372a4/' target='_blank'>
+                    LinkedIn        
+                </Menu>
+                <Menu href='https://drive.google.com/file/d/1vcMMw3hQxQdSBO9UQjC85v55QRIu-uL3/view?usp=sharing' target='_blank'>
+                    Resume
+                </Menu>
+            </Options>}
+        </Right2>
     </Nav>
   )
 }

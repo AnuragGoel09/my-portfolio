@@ -8,10 +8,11 @@ import { BrowserRouter ,Routes,Route} from "react-router-dom";
 const Container=styled.div`
   background-color: rgba(0,0,0,0.94);
   display: flex;
+  /* width: 100vw; */
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  
+  overflow: hidden;
 `;
 
 function App() {
