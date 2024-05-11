@@ -1,10 +1,13 @@
 import React from 'react'
 import styled ,{keyframes} from 'styled-components'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import { mobile, tablet } from '../responsive';
+import { height, width } from '@mui/system';
 const Container=styled.div`
     color: white;
     position: relative;
     width: 75%;
+    ${mobile({width:'90%'})}
     background-color: rgba(0,0,0,0.3);
     border-radius: 2rem;
     border: solid 0.5px rgba(255,255,255,0.1) ;
@@ -14,11 +17,20 @@ const Container=styled.div`
 const InnerContainer=styled.div`
     color: white;
     position: relative;
-    padding: 27% 0%;
-    margin: 1%;
-    background-color: #202020;
+    padding: 30% 0%;
+    ${tablet({padding:'40vh 0%'})}
+    ${mobile({padding:'26vh 0%'})}
+    margin: 0.8%;
+    background-color: rgba(32,32,32,0.5);
     border-radius: 1.5rem;
+    /* opacity: 0.7; */
     border: solid 0.5px rgba(255,255,255,0.1) ;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    &:hover{
+        border-color: white;
+        background-color:rgba(255,255,255,0.01);
+    }
 `;
 const Line=styled.div`
   margin: auto;
@@ -50,51 +62,145 @@ const Content=styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   top: 0;
   left: 0px;
+  gap: 8px;
+  
+  ${mobile({gap:'5px'})}
 `;
 
-const Text1=styled.div`
-  font-size: 70px;
-  color: whitesmoke;
-  font-family: Arial, Helvetica, sans-serif;
-  text-shadow: 0 0 2px rgba(255,255,255,0.1), /* Adjust the color and spread radius as needed */
-                 0 0 4px rgba(255,255,255,0.5);
+const Light=styled.div`
+    height: 0.5px;
+    width: 50%;
+    opacity: 0.7;
+    background-color: white;
+    box-shadow: white 0px 5px 20px 4px;
 `;
 
-const Text2=styled.div`
-  width: 100%;
-  text-align: center;
-  padding: 0px 60px;
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-  font-size: 40px;
-  color: orange;
-  margin-top: 20px;
+const Category=styled.div`
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    ${mobile({fontSize:'3vw'})}
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1.5px;
 `;
 
-const AnimateArrow=keyframes`
-  0% { transform: translateY(0); }
-  100% { transform: translateY(30px); }
+const Title=styled.div`
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    font-size: 24px;
+    ${mobile({fontSize:'5vw'})}
+    color: rgba(255,255,255,0.8);
+    font-family: Arial, Helvetica, sans-serif;
 `;
-const Arrow=styled.div`
+const Type=styled.div`
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    ${mobile({fontSize:'3.5vw'})}
+    color: rgba(255,255,255,0.4);
+    font-family: monospace;
+`;
+
+const ProjectImg=styled.img`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: solid 1px rgba(255,255,255,0.1) ;
+    border-bottom: none;
+    border-radius: 13px 13px 0px 0px;
+    z-index: 1;
+    `;
+
+const ImgContainer=styled.div`
+    position: absolute;
+    bottom: 0%;
+    width: 75%;
+    padding: 22% 0%;
+    background-color: #202020;
+    border-radius: 13px 13px 0px 0px;
+    border: solid 0.5px rgba(255,255,255,0.3) ;
+    border-bottom: none;
+    box-shadow: black 0px 30px 50px 10px;
+`;
+
+const Bar=styled.div`
   position: absolute;
-  bottom: 10%;
-  animation: ${AnimateArrow} 1.5s ease-in-out infinite;
+  top: 0;
+  background-color: #202020;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0px 15px;
+  box-sizing: border-box;
+  height: 23px;
+  gap: 6px;
+  ${mobile({height:'10%',gap:'3px'})}
+  z-index: 2;
+  border-radius: 13px 13px 0px 0px;
 `;
 
-export default function Internship1() {
+const Circle=styled.div`
+  width: 8px;
+  height: 8px;
+    ${mobile({width:'4px',height:'4px'})}
+  border-radius: 50%;
+  `;
+
+const Technology=styled.div`
+  height: 35px;
+  ${mobile({height:'20px'})}
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+`;
+
+const Icon=styled.img`
+  height: 100%;
+  border-radius: 10px;
+`;
+
+const Company=styled.div`
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+`;
+
+export default function Project(props) {
+    const data=props.data;
   return (
     <Container>
       <Line/>
       <InnerContainer>
         <Line2/>
           <Content>
-            {/* <Text1>Unlocking the future, one line of code at a time.</Text1>
-            <Text2>- Hii, I m Anurag -</Text2>
-            <Arrow><ArrowDownwardIcon fontSize='large'/></Arrow> */}
-          </Content>
+            <Category>Intership Work</Category>
+            <Title>{data.title}</Title>
+            <Type><Company>{data.company}</Company>{data.type}</Type>
+            <Technology>
+              {data.tech.map((item)=>(
+                <Icon src={item}/>
+              ))}
+            </Technology>
+            <ImgContainer>
+              <Bar>
+                <Circle style={{backgroundColor:'red'}}/>
+                <Circle style={{backgroundColor:'orange'}}/>
+                <Circle style={{backgroundColor:'green'}}/>
+              </Bar>
+              <ProjectImg src={data.img} />
+            </ImgContainer>
+            </Content>
       </InnerContainer>
     </Container>
   )

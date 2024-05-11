@@ -20,8 +20,8 @@ const InnerContainer=styled.div`
     padding: 30% 0%;
     ${tablet({padding:'40vh 0%'})}
     ${mobile({padding:'26vh 0%'})}
-    margin: 1%;
-    background-color: #202020;
+    margin: 0.8%;
+    background-color: rgba(32,32,32,0.5);
     border-radius: 1.5rem;
     /* opacity: 0.7; */
     border: solid 0.5px rgba(255,255,255,0.1) ;

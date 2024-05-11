@@ -28,6 +28,13 @@ export default function Work() {
           img:"./version-control-system.jpeg",
           tech:["./python-icon.png"]
           }}/>
+        <Internship1 data={{
+          title:"Pancard OCR",
+          company:"Ebix Cash, '22",
+          type:"Automate the process of KYC using pancard identification number",
+          img:"./pancard-extractor.png",
+          tech:["./python-icon.png"]
+          }}/>
         <Project data={{
           title:"What To Wear - Cloth Recommender Based on Weather",
           type:"A Weather API based application for real time weather information and cloth recommender based on weather , classified based on K-nearest-neighbor algorithm.",
