@@ -18,7 +18,7 @@ const InnerContainer=styled.div`
     margin: 1%;
     background-color: #202020;
     border-radius: 1.5rem;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     border: solid 0.5px rgba(255,255,255,0.1) ;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -122,6 +122,7 @@ const ImgContainer=styled.div`
     border-radius: 13px 13px 0px 0px;
     border: solid 0.5px rgba(255,255,255,0.3) ;
     border-bottom: none;
+    box-shadow: black 0px 30px 50px 10px;
 `;
 
 const Bar=styled.div`
@@ -145,6 +146,18 @@ const Circle=styled.div`
   border-radius: 50%;
   `;
 
+const Technology=styled.div`
+  height: 35px;
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+`;
+
+const Icon=styled.img`
+  height: 100%;
+  border-radius: 10px;
+`;
+
 export default function Project(props) {
     const data=props.data;
   return (
@@ -156,6 +169,11 @@ export default function Project(props) {
             <Category>Project</Category>
             <Title>{data.title}</Title>
             <Type>{data.type}</Type>
+            <Technology>
+              {data.tech.map((item)=>(
+                <Icon src={item}/>
+              ))}
+            </Technology>
             <ImgContainer>
               <Bar>
                 <Circle style={{backgroundColor:'red'}}/>

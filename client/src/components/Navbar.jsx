@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 const Nav=styled.div`
@@ -119,7 +120,9 @@ const Menu=styled.a`
 
 export default function Navbar() {
 
-    const [active,setActive]=useState("work")
+    const location=useLocation();
+    // const [active,setActive]=useState("/");
+    const navigate=useNavigate();
 
   return (
     <Nav>
@@ -132,15 +135,15 @@ export default function Navbar() {
         </Left>
         <Container>
             <Item>
-                <Light value="work" active={active}></Light>
-                <Name value="work" active={active} onClick={()=>{
-                    setActive("work");
+                <Light value="/" active={location.pathname}></Light>
+                <Name value="/" active={location.pathname} onClick={()=>{
+                    navigate('/')
                 }}>Work</Name>
             </Item>
             <Item>
-                <Light value="about" active={active}></Light>
-                <Name value="about" active={active} onClick={()=>{
-                    setActive("about");
+                <Light value="/about" active={location.pathname}></Light>
+                <Name value="/about" active={location.pathname} onClick={()=>{
+                    navigate('/about')
                 }}>About</Name>
             </Item>
         </Container>
