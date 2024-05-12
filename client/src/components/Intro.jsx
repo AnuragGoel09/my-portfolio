@@ -65,8 +65,7 @@ const Text1=styled.div`
   font-size: 2vw;
   color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
-  text-shadow: 0 0 2px rgba(255,255,255,0.1), /* Adjust the color and spread radius as needed */
-                 0 0 4px rgba(255,255,255,0.5);
+  text-shadow: 0 0 2.5px #fff, 0 0 20px #fff;
 `;
 
 const Text2=styled.div`
@@ -129,7 +128,7 @@ export default function Intro() {
         <InnerContainer>
           <Line2/>
             <Content>
-              <Text1>I’m not a great programmer, I’m just a good programmer with great habits.</Text1>
+              <Text1>I’m not a <span style={{color:'orange',textShadow:'0 0 2.5px #fff, 0 0 20px orange'}}>great</span> programmer, I’m just a good programmer with great habits.</Text1>
               <Text2>- Hii!, I'm Anurag -</Text2>
               <Arrow><ArrowDownwardIcon fontSize='large'/></Arrow>
             </Content>

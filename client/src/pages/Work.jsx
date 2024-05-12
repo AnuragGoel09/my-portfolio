@@ -21,11 +21,10 @@ export default function Work() {
     <>
     <Container>
         <Intro/>
-        {/* <Internship1/> */}
         <Project data={{
           title:"Version Control System (VCS)",
           type:"A lightweight version control system written in Python, inspired by Git, which provides basic commands for managing your project’s version history.",
-          img:"./version-control-system.jpeg",
+          img:"./version-control-system.jpg",
           tech:["./python-icon.png"]
           }}/>
         <Internship1 data={{

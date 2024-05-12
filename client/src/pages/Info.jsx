@@ -131,9 +131,10 @@ const Marks=styled.div`
 
 const ProfilePic=styled.div`
   position: absolute;
-  right: -60px;
-  top: -50px;
+  right: 20px;
+  top: 60px;
   width: 250px;
+  ${mobile({opacity:'0.4'})}
 `;
 const Menu=styled.a`
     text-decoration: none;
@@ -153,6 +154,9 @@ export default function Info() {
     <>
     <Container>
       {/* intro */}
+      <ProfilePic>
+        <Profile/>
+      </ProfilePic>
       <AboutMe>
         <Light/>
         <Heading>

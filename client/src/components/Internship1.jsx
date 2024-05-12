@@ -23,13 +23,14 @@ const InnerContainer=styled.div`
     margin: 0.8%;
     background-color: rgba(32,32,32,0.5);
     border-radius: 1.5rem;
-    /* opacity: 0.7; */
     border: solid 0.5px rgba(255,255,255,0.1) ;
     cursor: pointer;
     transition: all 0.5s ease;
     &:hover{
         border-color: white;
-        background-color:rgba(255,255,255,0.01);
+        box-shadow:
+          inset 0 400px 120px rgba(255,255,255,0.01), 
+          inset 0 -400px 120px rgba(255,255,255,0.05);
     }
 `;
 const Line=styled.div`
@@ -86,7 +87,7 @@ const Category=styled.div`
     justify-content: center;
     top: 10px;
     right: 15px;
-    font-size: 20px;
+    font-size: 16px;
     ${mobile({fontSize:'3vw'})}
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(255,255,255,0.4);
@@ -97,7 +98,8 @@ const Title=styled.div`
     margin-top: 10px;
     width: 100%;
     text-align: left;
-    font-size: 24px;
+    font-size: 20px;
+    text-shadow: 0 0 2.5px #fff;
     ${mobile({fontSize:'5vw'})}
     color: rgba(255,255,255,0.8);
     font-family: Arial, Helvetica, sans-serif;
@@ -105,7 +107,7 @@ const Title=styled.div`
 const Type=styled.div`
     width: 100%;
     text-align: left;
-    font-size: 20px;
+    font-size: 17px;
     ${mobile({fontSize:'3.5vw'})}
     color: rgba(255,255,255,0.4);
     font-family: monospace;
@@ -173,6 +175,7 @@ const Icon=styled.img`
 
 const Company=styled.div`
   color: white;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
 `;
 
