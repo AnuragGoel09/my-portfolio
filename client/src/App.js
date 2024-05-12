@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Info from './pages/Info';
 import Work from './pages/Work';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { BrowserRouter ,Routes,Route} from "react-router-dom";
 const Container=styled.div`
   background-color: rgba(0,0,0,0.94);
@@ -12,13 +14,23 @@ const Container=styled.div`
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  overflow: hidden;
 `;
+function ScrollToTopOnPageChange() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
+
   return (
     <Container>
       <BrowserRouter>
+              <ScrollToTopOnPageChange />
               <Navbar/>
               <Routes>
                 <Route exact path="/" element={<Work/>} />

@@ -25,13 +25,12 @@ const InnerContainer=styled.div`
     border-radius: 1.5rem;
     border: solid 0.5px rgba(255,255,255,0.1) ;
     cursor: pointer;
-    transition: all 0.5s ease;
     &:hover{
-        border-color: white;
-        box-shadow:
-          inset 0 400px 120px rgba(255,255,255,0.01),
-          inset 0 -400px 120px rgba(255,255,255,0.05);
+      border-color: white;
+      box-shadow:inset 0 -250px 120px black;
+      background:  ${props =>(props.back)};
     }
+    transition: all 0.5s ease;
 `;
 const Line=styled.div`
   margin: auto;
@@ -178,7 +177,7 @@ export default function Project(props) {
   return (
     <Container>
       <Line/>
-      <InnerContainer>
+      <InnerContainer back={data.back}>
         <Line2/>
           <Content>
             <Category>Project</Category>

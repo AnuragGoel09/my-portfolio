@@ -27,10 +27,9 @@ const InnerContainer=styled.div`
     cursor: pointer;
     transition: all 0.5s ease;
     &:hover{
-        border-color: white;
-        box-shadow:
-          inset 0 400px 120px rgba(255,255,255,0.01), 
-          inset 0 -400px 120px rgba(255,255,255,0.05);
+      border-color: white;
+      box-shadow:inset 0 -250px 120px black;
+      background:  ${props =>(props.back)};
     }
 `;
 const Line=styled.div`
@@ -184,7 +183,7 @@ export default function Project(props) {
   return (
     <Container>
       <Line/>
-      <InnerContainer>
+      <InnerContainer back={data.back}>
         <Line2/>
           <Content>
             <Category>Intership Work</Category>
