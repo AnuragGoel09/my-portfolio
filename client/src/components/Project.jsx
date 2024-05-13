@@ -3,6 +3,7 @@ import styled ,{keyframes} from 'styled-components'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { mobile, tablet } from '../responsive';
 import { height, width } from '@mui/system';
+import { useNavigate } from 'react-router-dom';
 const Container=styled.div`
     color: white;
     position: relative;
@@ -174,10 +175,11 @@ const Icon=styled.img`
 
 export default function Project(props) {
     const data=props.data;
+    const navigate=useNavigate();
   return (
     <Container>
       <Line/>
-      <InnerContainer back={data.back}>
+      <InnerContainer back={data.back} onClick={()=>navigate(data.link)}>
         <Line2/>
           <Content>
             <Category>Project</Category>

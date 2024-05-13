@@ -7,9 +7,10 @@ import Work from './pages/Work';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { BrowserRouter ,Routes,Route} from "react-router-dom";
+import VersionControlSystem from './work/VersionControlSystem';
 const Container=styled.div`
-  background-color: rgba(0,0,0,0.94);
   display: flex;
+  background-color: rgba(0,0,0,0.94);
   /* width: 100vw; */
   flex-direction: column;
   justify-content: center;
@@ -31,10 +32,11 @@ function App() {
     <Container>
       <BrowserRouter>
               <ScrollToTopOnPageChange />
-              <Navbar/>
+              {/* <Navbar/> */}
               <Routes>
                 <Route exact path="/" element={<Work/>} />
                 <Route exact path="/about" element={<Info/>} />
+                <Route exact path="/version-control-system" element={<VersionControlSystem/>} />
               </Routes>
       </BrowserRouter>
     </Container>

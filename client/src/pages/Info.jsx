@@ -2,6 +2,7 @@ import React from 'react'
 import styled  from 'styled-components'
 import Profile from '../components/Profile';
 import { mobile } from '../responsive';
+import Navbar from '../components/Navbar';
 
 const Container=styled.div`
     margin: 100px 0px 40px 0px;
@@ -152,6 +153,7 @@ const Menu=styled.a`
 export default function Info() {
   return (
     <>
+    <Navbar/>
     <Container>
       {/* intro */}
       <ProfilePic>

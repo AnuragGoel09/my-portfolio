@@ -13,6 +13,7 @@ const Nav=styled.div`
     align-items: start;
     margin-top: 20px;
     box-sizing: border-box;
+    background-color:transparent;
     position: fixed;
     top: 0;
     left: 0;
