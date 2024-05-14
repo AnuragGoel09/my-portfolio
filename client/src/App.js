@@ -8,10 +8,11 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { BrowserRouter ,Routes,Route} from "react-router-dom";
 import VersionControlSystem from './work/VersionControlSystem';
+import PancardOCR from './work/PancardOCR';
+
 const Container=styled.div`
   display: flex;
   background-color: rgba(0,0,0,0.94);
-  /* width: 100vw; */
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
@@ -37,6 +38,7 @@ function App() {
                 <Route exact path="/" element={<Work/>} />
                 <Route exact path="/about" element={<Info/>} />
                 <Route exact path="/version-control-system" element={<VersionControlSystem/>} />
+                <Route exact path="/pancard-ocr" element={<PancardOCR/>} />
               </Routes>
       </BrowserRouter>
     </Container>

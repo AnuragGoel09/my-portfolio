@@ -38,7 +38,7 @@ export default function Work() {
           img:"./pancard-extractor.png",
           tech:["./python-icon.png"],
           back:"linear-gradient(180deg, rgba(5,60,47,1) 0%, rgba(21,26,27,1) 65%)",
-          link:'/version-control-system'
+          link:'/pancard-ocr'
           }}/>
         <Project data={{
           title:"What To Wear - Cloth Recommender Based on Weather",

@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import FlareIcon from '@mui/icons-material/Flare';
-import GitHubIcon from '@mui/icons-material/GitHub';
-
+import { smallscreen  ,mobile} from '../responsive';
 const Container=styled.div`
     width: 100%;
     margin: auto;
@@ -11,6 +10,8 @@ const Container=styled.div`
 
 const Box=styled.div`
     width: 65%;
+    ${smallscreen({width:'80%'})}
+    ${mobile({width:'90%'})}
     margin: auto;
     background-color: rgba(0,0,0,0.1);
     border-radius: 26px;
@@ -59,6 +60,7 @@ const Context=styled.div`
     margin-top: 40px;
     color: white;
     font-size: 25px;
+    ${mobile({fontSize:'17px'})}
     text-align: center;
     line-height: 35px;
 `;
@@ -67,6 +69,7 @@ const VideoBox=styled.div`
     margin: 30px;
     padding: 20px;
     padding-top: 50px;
+    ${mobile({margin:'10px',padding:'10px',paddingTop:'30px'})}
     background-color: rgba(255,255,255,0.06);
     border-radius: 30px;
     box-shadow:inset 0 -250px 120px rgba(0,0,0,0.4);
@@ -81,6 +84,7 @@ const Video=styled.video`
 const Caption=styled.div`
     width: 90%;
     margin-top: -15px;
+    ${mobile({marginTop:'0px'})}
     display: flex;
     justify-content: right;
     align-items: center;
@@ -91,34 +95,10 @@ const Caption=styled.div`
 `;
 
 
-const Links=styled.div`
-    width: 60%;
-    margin: auto;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-`;
-
-const GithubLink=styled.div`
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: white;
-    /* background-color: rgba(255,255,255,0.1); */
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    &:hover{
-        background-color: rgba(255,255,255,0.1);     
-    }
-    border: solid 0.5px cyan;
-`;
-
-export default function VCSHighlight() {
-  return (
+export default function Highlights(props) {
+  
+    const data=props.data;
+    return (
     <Container>
         <Box>
             <Line/>
@@ -127,21 +107,19 @@ export default function VCSHighlight() {
             </Icon>
             <Head>HIGHLIGHTS</Head>
             <Context>
-                A lightweight version control system written in Python, inspired by Git &mdash; provides basic commands for managing project’s version history
+                {data.context}    
             </Context>
-            <VideoBox>
-                <Video src="./videos/vcs1.mp4" controls={false} loop autoPlay muted/>
-            </VideoBox>
-            <Caption>vcs commit <div style={{fontWeight:'bold',padding:'7px',backgroundColor:'rgba(255,255,255,0.1)',fontSize:'10px',borderRadius:'10px'}}>VIDEO LOOP</div></Caption>
-            <VideoBox>
-                <Video src="./videos/vcs2.mp4" controls={false} loop autoPlay muted/>
-            </VideoBox>
-            <Caption>vcs restore <div style={{fontWeight:'bold',padding:'7px',backgroundColor:'rgba(255,255,255,0.1)',fontSize:'10px',borderRadius:'10px'}}>VIDEO LOOP</div></Caption>
+            {data.videos.map((item,index)=>(
+                <>
+                    <VideoBox>
+                        <Video src={item.video} controls={false} loop autoPlay muted/>
+                    </VideoBox>
+                    <Caption>{item.caption} <div style={{fontWeight:'bold',padding:'7px',backgroundColor:'rgba(255,255,255,0.1)',fontSize:'10px',borderRadius:'10px'}}>VIDEO LOOP</div></Caption>
+                </>
+
+            ))}
         </Box>
-        <Links>
-        <div style={{color:'white',marginBottom:'10px',textShadow:'0px 0px 1.5px white',fontSize:'14px'}}>USEFUL LINKS</div>
-        <GithubLink><GitHubIcon/>Github Repo</GithubLink>
-        </Links>
+        
     </Container>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled ,{keyframes} from 'styled-components'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { mobile } from '../responsive';
+import { mobile, smallscreen } from '../responsive';
 import { positions } from '@mui/system';
 
 const Container=styled.div`
@@ -13,7 +13,7 @@ const Container=styled.div`
     border: solid 0.5px rgba(255,255,255,0.1) ;
     box-shadow: rgba(0,0,0,0.7) 0px 0px 20px 10px;
     border-bottom: none;
-    ${mobile({display:'none'})}
+    ${smallscreen({display:'none'})}
     `;
 
 const InnerContainer=styled.div`
@@ -93,7 +93,7 @@ const Arrow=styled.div`
 const MobileContainer=styled.div`
   width: 80%;
   display: none;
-  ${mobile({display:'flex'})}
+  ${smallscreen({display:'flex'})}
   flex-direction: column;
   align-items: left;
   gap: 20px;

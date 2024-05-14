@@ -1,14 +1,14 @@
 import React from 'react'
 import styled ,{keyframes} from 'styled-components'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { mobile, tablet } from '../responsive';
+import { mobile, smallscreen, tablet } from '../responsive';
 import { height, width } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 const Container=styled.div`
     color: white;
     position: relative;
     width: 75%;
-    ${mobile({width:'90%'})}
+    ${smallscreen({width:'90%'})}
     background-color: rgba(0,0,0,0.3);
     border-radius: 2rem;
     border: solid 0.5px rgba(255,255,255,0.1) ;
@@ -20,7 +20,8 @@ const InnerContainer=styled.div`
     position: relative;
     padding: 30% 0%;
     ${tablet({padding:'40vh 0%'})}
-    ${mobile({padding:'26vh 0%'})}
+    ${smallscreen({padding:'30vh 0%'})}
+    ${mobile({padding:'22vh 0%'})}
     margin: 0.8%;
     background-color: rgba(32,32,32,0.5);
     border-radius: 1.5rem;
