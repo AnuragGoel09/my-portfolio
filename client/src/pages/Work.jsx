@@ -46,7 +46,7 @@ export default function Work() {
           img:"./what-to-wear.png",
           tech:["./react-icon.png","./material-ui-icon.png"],
           back:"linear-gradient(180deg, rgba(12,21,66,1) 0%, rgba(21,26,27,1) 65%)",
-          link:'/version-control-system'
+          link:'/what-to-wear'
           }}/>
         <Project data={{
           title:"MyNotebook - Notes and Checklist taking web-app",

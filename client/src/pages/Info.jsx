@@ -150,6 +150,15 @@ const Menu=styled.a`
     font-size: 15px;
 `;
 
+const Skill=styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+`;
+
+
 export default function Info() {
   return (
     <>
@@ -188,6 +197,62 @@ export default function Info() {
         </Education>  
       </AboutMe>
       
+      {/* skills */}
+      <AboutMe>
+        <Heading>
+          <Circle/>SKILLS
+        </Heading>
+        <Education style={{justifyContent:'start',gap:'30px',alignItems:'end',flexWrap:'wrap'}}>
+          <Skill>
+            <img width={'50px'} src="./cpp.png" alt="" />
+            <div>C++</div>
+          </Skill>
+          <Skill>
+            <img width={'50px'} src="./c.png" alt="" />
+            <div>C</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./python-icon.png" alt="" />
+            <div>Python</div>
+          </Skill>
+          <Skill>
+            <img width={'50px'} src="./web.png" alt="" />
+            <div>Web development</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./logo192.png" alt="" />
+            <div>ReactJs</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./node-icon.jpg" alt="" />
+            <div>NodeJs</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./html.png" alt="" />
+            <div>HTML</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./css.png" alt="" />
+            <div>CSS</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./js.png" alt="" />
+            <div>Javascript</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./gpu.png" alt="" />
+            <div>Cuda Programming</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./mysql.png" alt="" />
+            <div>MySQL</div>
+          </Skill>
+          <Skill>
+            <img width={'46px'} src="./git.png" alt="" />
+            <div>Git</div>
+          </Skill>
+        </Education>
+      </AboutMe>
       {/* education */}
       <AboutMe>
         <Heading>

@@ -9,6 +9,7 @@ import { useLocation } from 'react-router-dom';
 import { BrowserRouter ,Routes,Route} from "react-router-dom";
 import VersionControlSystem from './work/VersionControlSystem';
 import PancardOCR from './work/PancardOCR';
+import WhatToWear from './work/WhatToWear';
 
 const Container=styled.div`
   display: flex;
@@ -39,6 +40,7 @@ function App() {
                 <Route exact path="/about" element={<Info/>} />
                 <Route exact path="/version-control-system" element={<VersionControlSystem/>} />
                 <Route exact path="/pancard-ocr" element={<PancardOCR/>} />
+                <Route exact path="/what-to-wear" element={<WhatToWear/>} />
               </Routes>
       </BrowserRouter>
     </Container>

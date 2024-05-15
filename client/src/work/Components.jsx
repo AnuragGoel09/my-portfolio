@@ -14,6 +14,7 @@ export const ButtonLine=styled.div`
   display: flex;
   position: fixed;
   justify-content: space-between;
+  z-index: 99;
 `;
 
 export const Back=styled.div`
