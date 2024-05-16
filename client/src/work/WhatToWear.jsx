@@ -20,11 +20,14 @@ export default function WhatToWear() {
 
   const navigate=useNavigate();
   const data={
-    context:"Automate the process of KYC using pancard identification number",
+    context:"Style yourself based on whether and make your comfort longlasting",
     videos:[{
-      video:"./videos/pancardocr1.mp4",
-      caption:"pan number extraction"
-    },]}
+      video:"./videos/wtw1.mp4",
+      caption:"allow location"
+    },{
+      video:"./videos/wtw2.mp4",
+      caption:"clothing advise"
+    }]}
 
   return (
     <>
@@ -38,29 +41,30 @@ export default function WhatToWear() {
           What To Wear
         </Title>
         <Company>
-          Ebix Cash &ndash; December 2022
+          Personal Project &ndash; March 2023
         </Company>
         <Overview>
         <div style={{color:'white',marginBottom:'10px',textShadow:'0px 0px 1.5px white'}}>Overview</div>
-        My project involves creating a portal that facilitates Optical Character Recognition (OCR) of PAN cards and extracts PAN numbers for Know Your Customer (KYC) purposes, catering specifically to the needs of companies. By leveraging OCR technology, the portal automates the extraction process, allowing for swift and accurate retrieval of PAN numbers from scanned or uploaded PAN cards. This solution streamlines the KYC process for businesses, enhancing efficiency and reducing manual effort. With a focus on accuracy and reliability, the portal serves as a valuable tool for companies seeking to verify customer identities and comply with regulatory requirements seamlessly.
+        My project seamlessly integrates user interface design with real-time weather data, leveraging the power of machine learning to provide personalized clothing recommendations. By connecting to a weather API, we gather up-to-the-minute weather information, enabling users to make informed decisions about their attire. Our innovative approach goes beyond simple weather forecasts—it analyzes various factors such as temperature, humidity, and wind speed, utilizing machine learning algorithms to suggest the most suitable clothing options for any weather condition. Whether it's a sunny day or a sudden downpour, our application ensures that users are always dressed appropriately, combining practicality with cutting-edge technology. 
         </Overview>
 
         <Overview style={{display:'flex',justifyContent:'space-between'}}>
           <Left>
             <div style={{color:'white',marginBottom:'10px',textShadow:'0px 0px 1.5px white'}}>Timeline & Status</div>
-            <div>1 Month, <span style={{color:'white',textShadow:'0px 0px 3px white'}}>Launched in December 2022</span></div>
+            <div>1 Month, <span style={{color:'white',textShadow:'0px 0px 3px white'}}>Launched in March 2023</span></div>
           </Left>   
           <Right>
             <div style={{color:'white',marginBottom:'10px',textShadow:'0px 0px 1.5px white',textAlign:'right'}}>Technologies</div>
-            <div style={{justifyContent:'right',display:'flex',alignItems:'center',gap:'10px'}}>Python 3 <img width={'20px'} src="./python-icon.png" /></div>
-            <div style={{justifyContent:'right',display:'flex',alignItems:'center',gap:'10px'}}>EasyOCR </div>
+            <div style={{justifyContent:'right',display:'flex',alignItems:'center',gap:'10px'}}>ReactJs <img width={'20px'} src="./logo192.png" /></div>
+            <div style={{justifyContent:'right',display:'flex',alignItems:'center',gap:'10px'}}>Machine Learning (KNN Algorithm) <img width={'20px'} src="./machine.png" alt="" /> </div>
           
           </Right> 
         </Overview>
         <Highlights data={data}/>
         <Links>
         <div style={{color:'white',marginBottom:'10px',textShadow:'0px 0px 1.5px white',fontSize:'14px'}}>USEFUL LINKS</div>
-        <GithubLink target="_blank" href="https://github.com/AnuragGoel09/pancard-number-extractor-api"><GitHubIcon/>Github Repo</GithubLink>
+        <GithubLink target="_blank" href="https://github.com/AnuragGoel09/What-to-wear"><GitHubIcon/>Github Repo</GithubLink>
+        <GithubLink target="_blank" href="https://anuraggoel09.github.io/What-to-wear/"><img src="./web.png" width={'30px'} alt="" />Web-App Link</GithubLink>
         </Links>
       </Container>
     </>

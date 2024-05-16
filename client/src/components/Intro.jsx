@@ -128,7 +128,7 @@ export default function Intro() {
         <InnerContainer>
           <Line2/>
             <Content>
-              <Text1>I’m not a <span style={{color:'orange',textShadow:'0 0 2.5px #fff, 0 0 20px orange'}}>great</span> programmer, I’m just a good programmer with great habits.</Text1>
+              <Text1>Explore my portfolio <span style={{color:'orange',textShadow:'none'}}>&mdash; </span>an exhibition of expertise, where each project tells a story of skill and innovation.</Text1>
               <Text2>- Hii!, I'm Anurag -</Text2>
               <Arrow><ArrowDownwardIcon fontSize='large'/></Arrow>
             </Content>
