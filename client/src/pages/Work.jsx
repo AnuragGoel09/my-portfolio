@@ -54,7 +54,7 @@ export default function Work() {
           img:"./my-notebook.png",
           tech:["./react-icon.png","node-icon.jpg","material-ui-icon.png","./mongo-icon.png","./express-icon.png"],
           back:"linear-gradient(180deg, rgba(35,14,94,1) 0%, rgba(21,26,27,1) 65%)",
-          link:'/version-control-system'
+          link:'/my-notebook'
           }}/>
           
     </Container>

@@ -10,6 +10,7 @@ import { BrowserRouter ,Routes,Route} from "react-router-dom";
 import VersionControlSystem from './work/VersionControlSystem';
 import PancardOCR from './work/PancardOCR';
 import WhatToWear from './work/WhatToWear';
+import MyNotebook from './work/MyNotebook';
 
 const Container=styled.div`
   display: flex;
@@ -41,6 +42,7 @@ function App() {
                 <Route exact path="/version-control-system" element={<VersionControlSystem/>} />
                 <Route exact path="/pancard-ocr" element={<PancardOCR/>} />
                 <Route exact path="/what-to-wear" element={<WhatToWear/>} />
+                <Route exact path="/my-notebook" element={<MyNotebook/>} />
               </Routes>
       </BrowserRouter>
     </Container>

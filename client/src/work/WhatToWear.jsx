@@ -35,7 +35,7 @@ export default function WhatToWear() {
         <ColorLight/>
         <ButtonLine>
           <Back onClick={()=>navigate("/")}><ArrowBackIcon/>Back</Back>
-          <Back onClick={()=>navigate("/pancard-ocr")}>Next Project<ArrowForwardIcon/></Back>
+          <Back onClick={()=>navigate("/my-notebook")}>Next Project<ArrowForwardIcon/></Back>
         </ButtonLine>
         <Title>
           What To Wear
