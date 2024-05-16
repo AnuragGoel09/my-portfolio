@@ -28,7 +28,6 @@ const Left=styled.div`
     align-items: center;
     gap: 10px;
     color: whitesmoke;
-    ${mobile({display:'none'})}
 `;
 
 const LeftLight=styled.div`
@@ -42,10 +41,13 @@ const LeftLight=styled.div`
 `;
 const Text=styled.div`
     display: flex;
-    flex-direction: column;
-    gap: 1px;
+    align-items: center;
+    gap: 10px;
 `;
+const TextInner=styled.div`
+    ${mobile({display:'none'})}
 
+`;
 const MyName=styled.div`
 `;
 
@@ -166,8 +168,11 @@ export default function Navbar() {
         <Left>
             <LeftLight/>
             <Text>
-                <MyName>Anurag Goel</MyName>
-                <Position>Student at IIT Dharwad</Position>
+                <MyName style={{fontFamily:'fantasy',fontSize:'30px'}}>AG</MyName>
+                <TextInner>
+                    <MyName>Anurag Goel</MyName>
+                    <Position>Student at IIT Dharwad</Position>
+                </TextInner>
             </Text>
         </Left>
         <Container>
