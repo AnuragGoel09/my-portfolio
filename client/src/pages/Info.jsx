@@ -306,7 +306,7 @@ export default function Info() {
               <Menu href='https://www.linkedin.com/in/anurag-goel-3013372a4/' target='_blank'>
                   LinkedIn        
               </Menu>
-              <Menu href='https://drive.google.com/file/d/1vcMMw3hQxQdSBO9UQjC85v55QRIu-uL3/view?usp=sharing' target='_blank'>
+              <Menu href='https://drive.google.com/file/d/1TmW7d2b-AygMWSJjGY5hSzALTc3PZO6N/view' target='_blank'>
                   Resume
               </Menu>
           {/* </Right> */}
